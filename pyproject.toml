@@ -15,6 +15,9 @@ requires-python = ">=3.9"
 authors = [
     { name = "Endre Bakken Stovner" },
 ]
+dependencies = [
+    "pandas>=2.0",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Cython",

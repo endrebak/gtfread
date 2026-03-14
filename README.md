@@ -1,12 +1,14 @@
 # gtfread
 
-`gtfread` is a small Cython-backed package for parsing GTF attribute fields into column-oriented Python lists.
+`gtfread` is a small Cython-backed package for parsing and reading GTF files into pandas dataframes.
 
 ## Layout
 
-- `src/gtfread/_parser.pyx`: the Cython implementation
+- `src/gtfread/_parser.pyx`: the Cython attribute parser
 - `src/gtfread/_fallback.py`: pure Python fallback for source-tree imports before the extension is built
-- `tests/test_parser.py`: smoke test for the public API
+- `src/gtfread/readers.py`: the dataframe reader API
+- `tests/test_parser.py`: parser smoke test
+- `tests/test_readers.py`: GTF reader tests
 
 ## Install
 
@@ -15,6 +17,14 @@ python -m pip install -e .
 ```
 
 That uses `pyproject.toml` to install the build requirements and compile the Cython extension.
+
+## Usage
+
+```python
+from gtfread import read_gtf
+
+df = read_gtf("annotation.gtf")
+```
 
 ## Build a wheel
 
