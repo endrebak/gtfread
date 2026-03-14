@@ -27,10 +27,13 @@ classifiers = [
 ]
 
 [tool.setuptools]
-package-dir = {"" = "src"}
 ext-modules = [
-    {name = "gtfread._parser", sources = ["src/gtfread/_parser.pyx"]},
+    {name = "gtfread._parser", sources = ["gtfread/_parser.pyx"]},
 ]
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["gtfread*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
