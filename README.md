@@ -2,6 +2,8 @@
 
 `gtfreader` is a small package for parsing and reading GTF files into pandas dataframes.
 
+Requires Python 3.12 or newer.
+
 ## Install
 
 ```bash

@@ -11,7 +11,7 @@ name = "gtfreader"
 version = "0.1.2"
 description = "Fast Cython-backed parsing for GTF attribute columns."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 authors = [
     { name = "Endre Bakken Stovner" },
 ]
@@ -22,6 +22,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Cython",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
@@ -39,7 +41,7 @@ include = ["gtfreader*"]
 testpaths = ["tests"]
 
 [tool.cibuildwheel]
-build = "cp39-* cp310-* cp311-* cp312-* cp313-*"
+build = "cp312-* cp313-*"
 skip = "pp* *-musllinux_* *-manylinux_i686"
 test-command = "pytest -q {project}/tests"
 test-requires = ["pytest"]
